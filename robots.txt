@@ -1,0 +1,8 @@
+User-agent: *
+Sitemap: http://****.****/sitemap.xml
+
+User-agent: *
+Disallow: /*.js$
+Disallow: /*.inc$
+Disallow: /*.css$
+Disallow: /*.yml$

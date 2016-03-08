@@ -1,0 +1,29 @@
+permalink: /:year/:month/:day/:title.html
+markdown: kramdown
+
+kramdown:
+  input: GFM
+
+# 作者信息
+author:
+  name: Dennis
+  email: 309233594@qq.com
+  link: http://ukagaka.github.io/
+  weibo:
+  github: https://github.com/ukagaka
+
+# 站点信息
+title: Dennis's blog
+description: Dennis's博客
+url: http://ukagaka.github.io
+rss_url: /pages/atom.xml
+
+#多说配置
+duoshuo_short_name: dennisdemo
+
+#Google站内搜索
+google_cx: g***
+
+# avatar头像及Favicon
+avatar: http://uc.2144.cn/data/avatar/150/95/56/01_avatar_middle.jpg
+favicon: http://uc.2144.cn/data/avatar/150/95/56/01_avatar_middle.jpg
