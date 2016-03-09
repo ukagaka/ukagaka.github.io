@@ -117,13 +117,13 @@ icon: globe
     使用 ONBUILD 指令的镜像，推荐在标签中注明，例如 ruby:1.9-onbuild。
 
 
-##问题
-###1. RUN和CMD的区别
+## 问题
+### 1. RUN和CMD的区别
 run名字是在构建镜像的时候运行的，而CMD是运行容器的时候执行的<br>
 而cmd一般还会与entrypoint一起使用，作为ENTRYPOINT指令的默认参数
 
-###2.CMD和ENTRYPOINT的区别
+### 2.CMD和ENTRYPOINT的区别
 区别在于，ENTRYPOINT命令不会被docker run 提供的参数覆盖，而启动容器的时候用户指定了运行命令，则会覆盖掉CMD命令
 
-###3.ADD和COPY的区别
+### 3.ADD和COPY的区别
 区别在于ADD命令包含了类似tar的解压功能，如果是单纯复制文件，Docker推荐使用COPY
