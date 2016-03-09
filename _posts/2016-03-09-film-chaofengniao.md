@@ -1,13 +1,14 @@
 ---
 layout: post
 keywords: Start
-description:饥饿游戏3.嘲笑鸟
+description: 饥饿游戏3.嘲笑鸟
 title: 饥饿游戏3.嘲笑鸟下载
 categories: [电影下载]
 tags: [电影下载]
 group: archive
 icon: globe
 ---
+
 
 
 《饥饿游戏3：嘲笑鸟（下）》是由弗朗西斯·劳伦斯执导，娜塔莉·多默尔、詹妮弗·劳伦斯、伊丽莎白·班克斯联合主演的一部科幻电影。影片于2015年11月20日在美国上映，于2015年11月20日以2D/3D/中国巨幕格式在中国内地上映。[1]
