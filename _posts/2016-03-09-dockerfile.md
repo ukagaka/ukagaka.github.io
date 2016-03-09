@@ -118,6 +118,7 @@ icon: globe
 
 
 ## 问题
+
 ### 1.RUN和CMD的区别
 run名字是在构建镜像的时候运行的，而CMD是运行容器的时候执行的<br>
 而cmd一般还会与entrypoint一起使用，作为ENTRYPOINT指令的默认参数
