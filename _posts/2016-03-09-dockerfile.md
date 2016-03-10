@@ -131,12 +131,12 @@ run名字是在构建镜像的时候运行的，而CMD是运行容器的时候�
 
 
 ## dockerfile启动过程
-1. 启动是通过一个原始镜像(FROM)，然后执行文件里的每一步操作，执行的每一步生成一个中间层容器，然后执行完以后，生成一个新的镜像，在把中间层容器给删掉
-1. setp:表示执行的dockerile每一步操作。
-2. -->Running in 9c87a0679522:表示执行每一步生成的一个容器（中间层容器）
-3. -->a63e4da99ab4:这是后面紧跟的一个，表示的是，提交以后生成的镜像（中间层镜像）ID
-4. removing intermediate container cc70f09786f4：表示在得到这个中间层镜像后，删除中间层建立容器。
-5. Successfully built 3504c6ef75e4：表示build完整之后，最后生成的镜像
+### 1. 启动是通过一个原始镜像(FROM)，然后执行文件里的每一步操作，执行的每一步生成一个中间层容器，然后执行完以后，生成一个新的镜像，在把中间层容器给删掉
+### 1. setp:表示执行的dockerile每一步操作。
+### 2. -->Running in 9c87a0679522:表示执行每一步生成的一个容器（中间层容器）
+### 3. -->a63e4da99ab4:这是后面紧跟的一个，表示的是，提交以后生成的镜像（中间层镜像）ID
+### 4. removing intermediate container cc70f09786f4：表示在得到这个中间层镜像后，删除中间层建立容器。
+### 5. Successfully built 3504c6ef75e4：表示build完整之后，最后生成的镜像
 
 
 ## 从基础镜像运行一个容器
@@ -148,6 +148,6 @@ run名字是在构建镜像的时候运行的，而CMD是运行容器的时候�
 
 
 ## 再次执行dockerfile启动
-1. -->Using cache:表示使用了缓存，dockerfile就不会在继续进行构建。如果不使用缓存，可以在docker build后面加上 --no-cache命令，让docker不使用缓存。
-2. 如果Dockerfile文件有变动，只会对有变动的命令执行build操作，其它还是用缓存（只有在有变动的地方才不使用缓存）
-3. 可以使用docker history [image] 命令进行查看镜像的构建过程
+### 1. -->Using cache:表示使用了缓存，dockerfile就不会在继续进行构建。如果不使用缓存，可以在docker build后面加上 --no-cache命令，让docker不使用缓存。
+### 2. 如果Dockerfile文件有变动，只会对有变动的命令执行build操作，其它还是用缓存（只有在有变动的地方才不使用缓存）
+### 3. 可以使用docker history [image] 命令进行查看镜像的构建过程
