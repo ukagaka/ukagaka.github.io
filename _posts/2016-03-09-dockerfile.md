@@ -69,6 +69,7 @@ icon: globe
 ### 9. VOLUME
 格式为 `VOLUME ["/data"]`。<br>
 创建一个可以从本地主机或其他容器挂载的挂载点，一般用来存放数据库和需要保持的数据等。
+(PS:VOLUME里的值是本地的文件夹目录，挂载到容器中是随机生成的)
 
 ### 10. WORKDIR
 格式为 `WORKDIR /path/to/workdir`。<br>
