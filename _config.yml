@@ -1,33 +1,29 @@
-# Welcome to Amplified for Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely need to edit after that.
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'jekyll serve'. If you change this file, please restart the server process.
-
-# Site settings
-title: Awesome Site Title
-email: your-email@domain.com
-description: >
-  Awesome site description here
-logo: "/assets/images/logo.jpg"
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://yourdomain.com" # the base hostname & protocol for your site
-paginate:	5 # The number of posts to show per page on your homepage
-
-name: 'Your Name'
-bio: >
-  Mea suas vituperatoribus et, virtute corpora quaestio cum ut.
-  Ne solet nostrum complectitur pri, vis ut inani populo.
-author_image: "/assets/images/author.jpg"
-twitter_username: jekyllrb
-github_username:  jekyll
-
-# Build settings
+permalink: /:year/:month/:day/:title.html
 markdown: kramdown
 
 kramdown:
-  parse_block_html: true
+  input: GFM
 
-gems:
-  - jekyll-paginate
+# 作者信息
+author:
+  name: Dennis
+  email: 309233594@qq.com
+  link: http://ukagaka.github.io/
+  weibo:
+  github: https://github.com/ukagaka
+
+# 站点信息
+title: Dennis's blog
+description: Dennis's博客
+url: http://ukagaka.github.io
+rss_url: /pages/atom.xml
+
+#多说配置
+duoshuo_short_name: indoorsman
+
+#Google站内搜索
+google_cx: g***
+
+# avatar头像及Favicon
+avatar: http://uc.2144.cn/data/avatar/150/95/56/01_avatar_middle.jpg
+favicon: http://uc.2144.cn/data/avatar/150/95/56/01_avatar_middle.jpg
