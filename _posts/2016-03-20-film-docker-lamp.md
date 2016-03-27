@@ -164,3 +164,6 @@ mysql编写的时候只要注意权限进行设置下即可。<br>
     EXPOSE 80
     CMD [“nginx”, “-g”, “daemon off;”]
 
+
+本文的代码在[git](https://github.com/ukagaka/Dockerfile-lnmp)上已经发布，[git上的地址](https://github.com/ukagaka/Dockerfile-lnmp)<br>
+
