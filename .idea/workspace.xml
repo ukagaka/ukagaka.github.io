@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0771be04-b4b8-4472-bde8-87e345b41346" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/_posts/2016-03-09-film-docker-lamp.md" afterPath="$PROJECT_DIR$/_posts/2016-03-20-film-docker-lamp.md" />
-    </list>
+    <list default="true" id="0771be04-b4b8-4472-bde8-87e345b41346" name="Default" comment="" />
     <ignored path="ukagaka.github.io.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -101,6 +98,7 @@
         <option value="$PROJECT_DIR$/_posts/2016-03-09-dockerfile.md" />
         <option value="$PROJECT_DIR$/_posts/2016-03-08-my-first-blog.md" />
         <option value="$PROJECT_DIR$/_posts/2016-03-09-film-docker-lamp.md" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -114,7 +112,7 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="27" />
+    <option name="x" value="14" />
     <option name="width" value="1452" />
     <option name="height" value="912" />
   </component>
@@ -247,16 +245,16 @@
       <option name="presentableId" value="Default" />
       <updated>1457431684496</updated>
       <workItem from="1458963535938" duration="7423000" />
-      <workItem from="1459047485900" duration="606000" />
+      <workItem from="1459047485900" duration="689000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8029000" />
+    <option name="totallyTimeSpent" value="8112000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="27" y="0" width="1452" height="912" extended-state="0" />
-    <editor active="false" />
+    <frame x="14" y="0" width="1452" height="912" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14511494" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
