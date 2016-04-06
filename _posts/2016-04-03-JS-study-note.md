@@ -128,6 +128,7 @@ third形成的作用域链：`third->first->window`<br>
     c();// 3
 
 因为被引用所以，A对象不会被GC回收（GC回收的机制是：如果一个对象不再被引用，那么这个对象就会被GC回收，否则这个对象一直会保存在内存中）<br>
+
     var f = function(document){
         var viewport;
         var obj = {
@@ -144,6 +145,7 @@ third形成的作用域链：`third->first->window`<br>
         window.jView = obj;
     };
     f(document);
+
 obj 是在 f 中定义的一个对象，这个对象中定义了一系列方法， 执行window.jView = obj 就是在 window 全局对象定义了一个变量 jView，并将这个变量指向 obj 对象，即全局变量 jView 引用了 obj . 而 obj 对象中的函数又引用了 f 中的变量 viewport ,因此 f 中的 viewport 不会被GC回收，会一直保存到内存中，所以这种写法满足闭包的条件。
 
 
