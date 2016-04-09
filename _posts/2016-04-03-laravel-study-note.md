@@ -82,3 +82,9 @@ icon: globe
     return view('index')->with('name',$name);
 
 那么，在视图里，`{!! $name !!}` 输出的是红色的 Hello Word，而`{{ $name }}`输出的是`<span style="color:red">Hello Word</span>`
+
+
+### 3、使用php artisan命令
+1、 使用 php artisan make:model --migration Post
+会在app目录下创建模型类 post
+会在database/migrations目录下创建 post迁移用数据库
