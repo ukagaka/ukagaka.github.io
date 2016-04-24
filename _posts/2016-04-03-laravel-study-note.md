@@ -84,13 +84,13 @@ icon: globe
 那么，在视图里，`{!! $name !!}` 输出的是红色的 Hello Word，而`{{ $name }}`输出的是`<span style="color:red">Hello Word</span>`
 
 
-### 3、使用php artisan命令
+### 4、使用php artisan命令
 1、 使用 php artisan make:model --migration Post
 会在app目录下创建模型类 post
 会在database/migrations目录下创建 post迁移用数据库
 
 
-### 4、在视图中显示URL连接的三种方式
+### 5、在视图中显示URL连接的三种方式
 1、 直接写id法
 <a href="/articles/{{ $article->id }}"></a>
 2、 使用URL函数法
@@ -99,7 +99,7 @@ icon: globe
 <a href="{{ action('ArticlesController@show', [$article->id]) }}"></a>
 
 
-### 5、 module特殊用法
+### 6、 module特殊用法
 1、 使用 setFieldNameAttribute 可以在数据存入数据库之前，对数据进行处理，中间的fieldName为要处理的字段名
 例：
     class Article extends Model
@@ -127,7 +127,7 @@ icon: globe
 注意scope为关键字，后面方法名为驼峰法，第一个字母大写，需要接收查询语句擦拭，但是不需要再使用的时候传递。
 
 
-### 6、 Carbon类的使用
+### 7、 Carbon类的使用
 如果想把自己定义的时间字段作为Carbon对象进行使用的话，需要在控制器内定义一个属性 $dates
 然后把字段名赋值给 $dates
 例：
@@ -144,3 +144,9 @@ icon: globe
 1、 使用$article->created_at，输出的是Carbon对象
 2、 使用$article->created_at->year，输出的是年份
 3、 使用$article->created_at->diffForHumans()，输出的是多少时间前发布的
+
+
+
+### 8、 路由的参数筛选
+路由里的接收的参数可以使用正则进行过滤，使用正则可以匹配给定过来的参数是否符合规则
+例：
