@@ -13,7 +13,7 @@ icon: globe
 
 
 ### 1、模板页上的内容覆盖子页面上的内容
-在子页面中可以使用 `@parent` 指令来被模板页上的内容给替换掉，前提是在布局模板中使用`@section`指令用来指定覆盖的区域
+在子页面中可以使用 `@parent` 指令来显示模板页上的内容，前提是在布局模板中使用`@section`指令用来指定覆盖的区域
 
 
     <!-- 存放在 resources/views/layouts/master.blade.php -->
@@ -70,6 +70,18 @@ icon: globe
     @include('view.name', ['some' => 'data'])
 
 注：不要在 Blade 视图中使用 `__DIR__` 和 `__FILE__` 常量，因为它们会指向缓存视图的路径。
+
+
+### 3、blade模板引擎的特殊用户
+@{{ $name }} 不使用{{}}进行解析。主要针对有些前端框架使用的也是{{}}
+{{ $name or 'Default'}}  表示如果给定的值（$name）没有的话，使用默认值(Default)
+{{ isset($name)?$name:'Default' }} 用法同上，三目运算
+@unless 除非的意思。除非是怎么样，否则的话才会输出
+    例：
+    @unless($score > 60)
+        不及格
+    @endunless
+如果分数大于60的话不执行里面的语句，否则的话才会输出。如果分数大于60不输出内容，小于60输出不及格
 
 
 
@@ -150,3 +162,6 @@ icon: globe
 ### 8、 路由的参数筛选
 路由里的接收的参数可以使用正则进行过滤，使用正则可以匹配给定过来的参数是否符合规则
 例：
+    Route::get('user/{name}', function ($name) {
+        //
+    })->where('name', '[A-Za-z]+');
