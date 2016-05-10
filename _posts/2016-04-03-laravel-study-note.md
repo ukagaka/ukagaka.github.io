@@ -85,7 +85,7 @@ icon: globe
 
 
 
-### 3、`{{}}` 和 `{!! !!}`的区别
+### 4、`{{}}` 和 `{!! !!}`的区别
 `{!! !!}` 对代码会进行转义， ``{{}}`不会对代码进行转义<br>
 比如有一个变量，存储的是一段HTML标签或者JS，那么`{{}}`会直接输出这些进行显示，而`{!! !!}`会把它当作HTML进行解析<br>
 
@@ -96,13 +96,13 @@ icon: globe
 那么，在视图里，`{!! $name !!}` 输出的是红色的 Hello Word，而`{{ $name }}`输出的是`<span style="color:red">Hello Word</span>`<br>
 
 
-### 4、使用php artisan命令
+### 5、使用php artisan命令
 1、 使用 php artisan make:model --migration Post<br>
 会在app目录下创建模型类 post<br>
 会在database/migrations目录下创建 post迁移用数据库<br>
 
 
-### 5、在视图中显示URL连接的三种方式
+### 6、在视图中显示URL连接的三种方式
 1、 直接写id法
 <a href="/articles/{{ $article->id }}"></a>
 2、 使用URL函数法
@@ -111,7 +111,7 @@ icon: globe
 <a href="{{ action('ArticlesController@show', [$article->id]) }}"></a>
 
 
-### 6、 module特殊用法
+### 7、 module特殊用法
 1、 使用 setFieldNameAttribute 可以在数据存入数据库之前，对数据进行处理，中间的fieldName为要处理的字段名<br>
 例：
     class Article extends Model
@@ -137,7 +137,7 @@ icon: globe
 注意scope为关键字，后面方法名为驼峰法，第一个字母大写，需要接收查询语句擦拭，但是不需要再使用的时候传递。<br>
 
 
-### 7、 Carbon类的使用
+### 8、 Carbon类的使用
 如果想把自己定义的时间字段作为Carbon对象进行使用的话，需要在控制器内定义一个属性 $dates<br>
 然后把字段名赋值给 $dates<br>
 例：
@@ -149,7 +149,7 @@ icon: globe
    Carbon::now() 表示输出当前时间
 
 
-### 7、 自动生成的created_at字段用法
+### 9、 自动生成的created_at字段用法
 自动生成的这个字段不属于普通的时间，而是作为一种Carbon对象来存储的<br>
 1、 使用$article->created_at，输出的是Carbon对象<br>
 2、 使用$article->created_at->year，输出的是年份<br>
@@ -157,7 +157,7 @@ icon: globe
 
 
 
-### 8、 路由的参数筛选
+### 10、 路由的参数筛选
 路由里的接收的参数可以使用正则进行过滤，使用正则可以匹配给定过来的参数是否符合规则<br>
 例：
     Route::get('user/{name}', function ($name) {
@@ -165,13 +165,13 @@ icon: globe
     })->where('name', '[A-Za-z]+');
 
 
-### 9、 ENV配置
+### 11、 ENV配置
 config/app.php 里可以直接更改env里的配置为什么还需要在env文件里填配置。<br>
 通过代码可以发现，它是优先调用evn里的配置，如果存在的话，直接使用env里的配置，如果不存在才会使用本文件里的配置。<br>
 好处是，可以在.git上把env文件给屏蔽掉，这样其它人在使用的时候不清楚数据库的真实地址和用户名<br>
 
 
-### 10、 路由
+### 12、 路由
 路由文件里为什么每条路由写一次，这样有什么好处？<br>
 每条路由写一次利于管理，特别在一个请求比较多的情况下可以知道每个文件的请求。<br>
 在重构的时候也可以很方便的知道哪些是没用可以删掉的请求。<br>
