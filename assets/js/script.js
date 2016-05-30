@@ -168,7 +168,7 @@ function afterPjax() {
   ds.charset = 'UTF-8';
   (document.getElementsByTagName('head')[0] 
      || document.getElementsByTagName('body')[0]).appendChild(ds);
-  //pajx_loadDuodsuo();
+  pajx_loadDuodsuo();
   pajx_load_fullscreen();
 }afterPjax();
 
@@ -217,15 +217,15 @@ function goback_normal(){
 /**
  * pjax后需要回调函数.加载多说
  */
-// function pajx_loadDuodsuo(){
-//     var dus=$(".ds-thread");
-//     if($(dus).length==1){
-//         var el = document.createElement('div');
-//         el.setAttribute('data-thread-key',$(dus).attr("data-thread-key"));//必选参数
-//         el.setAttribute('data-url',$(dus).attr("data-url"));
-//         DUOSHUO.EmbedThread(el);
-//         $(dus).html(el);
-//     }
-// }
+function pajx_loadDuodsuo(){
+    var dus=$(".ds-thread");
+    if($(dus).length==1){
+        var el = document.createElement('div');
+        el.setAttribute('data-thread-key',$(dus).attr("data-thread-key"));//必选参数
+        el.setAttribute('data-url',$(dus).attr("data-url"));
+        DUOSHUO.EmbedThread(el);
+        $(dus).html(el);
+    }
+}
 
 
