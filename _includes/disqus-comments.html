@@ -6,7 +6,7 @@
 <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 <script type="text/javascript">
     var duoshuoQuery = {short_name:"dennisblog"};
-    (function() {
+    $(document).ready(function() {
         var ds = document.createElement('script');
         ds.type = 'text/javascript';ds.async = true;
         ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
@@ -17,16 +17,4 @@
     })();
 </script>
 <!-- 多说公共JS代码 end -->
-<script>
-    function pajx_loadDuodsuo(){
-        var dus=$(".comments");
-        if($(dus).length==1){
-            var el = document.createElement('div');
-            el.setAttribute('data-thread-key',$(dus).attr("data-thread-key"));//必选参数
-            el.setAttribute('data-url',$(dus).attr("data-url"));
-            DUOSHUO.EmbedThread(el);
-            $(dus).html(el);
-        }
-    }
-</script>
 <!-- 多说评论框 end -->
