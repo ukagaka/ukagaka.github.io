@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
-group :jekyll_plugins do
-  gem "jekyll-paginate"
-  gem "jekyll-feed"
-end
+gem 'rough'
+gem 'jekyll-paginate'
+gem 'jekyll-geo-pattern'
+gem 'kramdown'
+gem 'jekyll-github-metadata'
