@@ -1,31 +1,33 @@
-<aside id="sidebar" class="fullscreen">
-  <nav id="tags">
-    <a href="/index.html" id="avatar" style="background-image:url({{ site.avatar }})"></a>
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="{{ site.baseurl }}/">{{ site.title }}</a>
+        </div>
 
-    <ul id="tags__ul">
-      <li id="pl__all" class="tags__li tags-btn active">所有文章</li>
-      {% for category in site.categories %} 
-        <li id="{{ category[0] }}" class="tags__li tags-btn">{{ category[0] }}</li>
-      {% endfor %}
-    </ul>
-
-    <div id="tags__bottom">
-      <a href="mailto:{{ site.author.email }}" id="icon-email" class="tags-btn fontello"></a>
-      <a href="/pages/rss.xml" id="icon-feed" class="tags-btn fontello"></a>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="{{ site.baseurl }}/">Home</a>
+                </li>
+                {% for page in site.pages %}{% if page.title %}
+				{% if page.url != '/404.html' %}
+                <li>
+                    <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+                </li>
+				{% endif %}
+                {% endif %}{% endfor %}
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
     </div>
-  </nav> <!-- end #tags -->
-
-  <div id="posts-list">
-    <form action="" id="search-form">
-      <a href="/index.html" id="mobile-avatar" style="background-image:url({{ site.avatar }})"></a>
-      <!--<input id="search-input" type="text" placeholder="Google站内搜索……"  >-->
-      <gcse:search></gcse:search>
-     </form>
-
-    <nav id="pl__container">
-    {% for post in site.posts %}
-      <a class="{{ post.categories }} pl__all" href="{{ post.url }}"><span class="pl__circle"></span><span class="pl__title">{{ post.title }}</span><span class="pl__date">{{ post.date | date: "%b %Y" }}</span></a>
-    {% endfor %}
-    </nav>
-  </div> <!-- end #posts-list -->
-</aside> <!-- end #sidebar -->
+    <!-- /.container -->
+</nav>
