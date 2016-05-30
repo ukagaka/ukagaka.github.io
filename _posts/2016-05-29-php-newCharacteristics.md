@@ -44,7 +44,7 @@ icon: globe
 - DatePeriod 迭代处理一段时间
 
 
-参考书籍<br>
-    Modern PHP<br>
-参考链接<br>
-    https://www.insp.top/article/learn-laravel-container<br>
+参考书籍
+    Modern PHP
+参考链接
+    https://www.insp.top/article/learn-laravel-container
