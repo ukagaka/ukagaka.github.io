@@ -1,8 +1,12 @@
 ---
 layout: post
+keywords: Start
+description: Laravel学习笔记
 title: Laravel学习笔记
-category: Laravel
+categories: [Laravel]
 tags: [Laravel]
+group: archive
+icon: globe
 ---
 
 

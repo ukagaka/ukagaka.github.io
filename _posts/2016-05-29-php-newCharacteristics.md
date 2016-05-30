@@ -1,9 +1,15 @@
 ---
 layout: post
+keywords: Start
+description: PHP新特性笔记
 title: PHP新特性笔记
-category: PHP
+categories: [PHP]
 tags: [PHP]
+group: archive
+icon: globe
 ---
+
+
 
 ### 1. 命名空间
     使用namespace进行定义，导入时可以使用use
