@@ -6,9 +6,9 @@
 # 'jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
-title: I am Chuan !
-name: DONGChuan
-email: dongchuan55@gmail.com
+title: Dennis`s blog
+name: Dennis
+email: 309233594@qq.com
 location: Nice, France
 company: Gfi Informatique
 company_url: http://www.gfi.fr/en/
@@ -16,7 +16,7 @@ github_url: https://github.com/DONGChuan
 description: This is personnel website of DONG Chuan
 favicon: favicon.png # Image must be in assets/images
 
-url: http://dongchuan.github.io # the base hostname & protocol for your site
+url: http://ukagaka.github.io/ # the base hostname & protocol for your site
 
 ## Gem
 gems:
