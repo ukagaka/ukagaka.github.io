@@ -13,8 +13,19 @@
         ds.charset = 'UTF-8';
         (document.getElementsByTagName('head')[0]
         || document.getElementsByTagName('body')[0]).appendChild(ds);
-        pajx_loadDuodsuo();
     })();
 </script>
 <!-- 多说公共JS代码 end -->
+<script>
+    function pajx_loadDuodsuo(){
+        var dus=$(".comments");
+        if($(dus).length==1){
+            var el = document.createElement('div');
+            el.setAttribute('data-thread-key',$(dus).attr("data-thread-key"));//必选参数
+            el.setAttribute('data-url',$(dus).attr("data-url"));
+            DUOSHUO.EmbedThread(el);
+            $(dus).html(el);
+        }
+    }
+</script>
 <!-- 多说评论框 end -->
