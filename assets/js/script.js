@@ -52,6 +52,8 @@ $('#mobile-avatar').on('click', function(){
   $('#sidebar, #pjax, #icon-arrow').addClass('fullscreen');
 });
 
+goback_normal();
+
 $(document).keydown(function(event){ 
   switch(event.keyCode){
     case 38:
