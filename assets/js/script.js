@@ -168,7 +168,7 @@ function afterPjax() {
   ds.charset = 'UTF-8';
   (document.getElementsByTagName('head')[0] 
      || document.getElementsByTagName('body')[0]).appendChild(ds);
-  pajx_loadDuodsuo();
+  //pajx_loadDuodsuo();
   pajx_load_fullscreen();
 }afterPjax();
 
