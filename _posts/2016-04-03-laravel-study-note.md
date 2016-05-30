@@ -73,9 +73,9 @@ icon: globe
 
 
 ## 3. blade模板引擎的特殊用户
-@{{ $name }} 不使用{{}}进行解析。主要针对有些前端框架使用的也是{{}}
-{{ $name or 'Default'}}  表示如果给定的值（$name）没有的话，使用默认值(Default)
-{{ isset($name)?$name:'Default' }} 用法同上，三目运算
+`@{{ $name }}` 不使用`{{}}`进行解析。主要针对有些前端框架使用的也是`{{}}`
+`{{ $name or 'Default'}}`  表示如果给定的值（$name）没有的话，使用默认值(Default)
+`{{ isset($name)?$name:'Default' }}` 用法同上，三目运算
 @unless 除非的意思。除非是怎么样，否则的话才会输出
     例：
     
@@ -105,16 +105,20 @@ icon: globe
 
 
 ## 6. 在视图中显示URL连接的三种方式
-### 1、 直接写id法
+### 1、直接写id法
+
     <a href="/articles/{{ $article->id }}"></a>
-### 2、 使用URL函数法
+    
+### 2、使用URL函数法
+
     <a href="{{ url('articles', $article->id) }}"></a>
-### 3、 使用控制器方法
+    
+### 3、使用控制器方法
+
     <a href="{{ action('ArticlesController@show', [$article->id]) }}"></a>
 
-
 ## 7. module特殊用法
-###  1、 使用 `setFieldNameAttribute` 可以在数据存入数据库之前，对数据进行处理，中间的fieldName为要处理的字段名
+###  1、使用 setFieldNameAttribute 可以在数据存入数据库之前，对数据进行处理，中间的fieldName为要处理的字段名
 例：
 
     class Article extends Model
@@ -124,6 +128,7 @@ icon: globe
             $this->attributes['published_at'] = Carbon::createFromFormat('Y-m-d', $date);
         }
     }
+    
 上面这个例子表示在存入数据库之前，对published_at字段进行处理。把接收到的时间字段给处理后，在存入数据库
 前面的set和后面的Attribute为关键字，中间的字段名为驼峰写法
 
@@ -155,10 +160,10 @@ icon: globe
 
 
 ## 9. 自动生成的created_at字段用法
-自动生成的这个字段不属于普通的时间，而是作为一种Carbon对象来存储的
-### 1、 使用$article->created_at，输出的是Carbon对象
-### 2、 使用$article->created_at->year，输出的是年份
-### 3、 使用$article->created_at->diffForHumans()，输出的是多少时间前发布的
+>自动生成的这个字段不属于普通的时间，而是作为一种Carbon对象来存储的
+### 1、使用$article->created_at，输出的是Carbon对象
+### 2、使用$article->created_at->year，输出的是年份
+### 3、使用$article->created_at->diffForHumans()，输出的是多少时间前发布的
 
 
 

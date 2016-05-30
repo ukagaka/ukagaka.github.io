@@ -22,6 +22,7 @@ icon: globe
 通过例子可以看出，自身是访问不到自己的`prototype`的
 
 `__proto__`通常是把父类的`prototype`赋值给它，这样的话，就可以通过这种父类的`prototype`赋值给新对象的`__proto__`属性的形式，一代代传承
+
     function f(){}
     f.prototype.foo = "abc";
     var obj = new f();
@@ -73,6 +74,7 @@ JS中有种特殊情况
     console.log(window.foo);//I‘m in function
 
 作用域链就是一个函数体中嵌套了多层函数体，并在不同的函数体中定义同一变量，当其中一个函数访问这个变量时，便会形成一条作用域链
+
     foo = "window";
     function first(){
         var foo = "first";
@@ -91,6 +93,7 @@ JS中有种特殊情况
 当执行second时，JS引擎会将second的作用域放置链表头部，其次是first的作用域，最后是window对象
 second形成的作用域链：`second->first->window`
 third形成的作用域链：`third->first->window`
+
     var foo = "window";
     var obj = {
         foo : "obj",
@@ -102,9 +105,11 @@ third形成的作用域链：`third->first->window`
     };
     var f = obj.getFoo();
     f(); //window
+    
 在实例化obj.getFoo方法的时候，在getFoo方法作用域里,`this`代表getFoo函数
 但是在输出的时候，又定义了一个匿名函数，所以`this`就代表了这个匿名函数
 相当于赋值给f的是这个匿名的函数，所以找到的是window,即
+
     var foo = "window";
     var f = function(){
         return this.foo;
@@ -113,6 +118,7 @@ third形成的作用域链：`third->first->window`
 
 ## 3. 闭包
 当一个内部函数被其外部函数之外的变量引用时，就形成了闭包
+
     function A(){
         var count = 0;
         function B(){
@@ -127,6 +133,7 @@ third形成的作用域链：`third->first->window`
     c();// 3
 
 因为被引用所以，A对象不会被GC回收（GC回收的机制是：如果一个对象不再被引用，那么这个对象就会被GC回收，否则这个对象一直会保存在内存中）
+
     var f = function(document){
         var viewport;
         var obj = {
@@ -142,6 +149,7 @@ third形成的作用域链：`third->first->window`
         }
     }
     f(document);
+    
 obj 是在 f 中定义的一个对象，这个对象中定义了一系列方法， 执行window.jView = obj 就是在 window 全局对象定义了一个变量 jView，并将这个变量指向 obj 对象，即全局变量 jView 引用了 obj . 而 obj 对象中的函数又引用了 f 中的变量 viewport ,因此 f 中的 viewport 不会被GC回收，会一直保存到内存中，所以这种写法满足闭包的条件。
 
 

@@ -28,8 +28,8 @@ icon: globe
 
 ## 3. RUN
 格式为 `RUN <command>` 或 `RUN ["executable", "param1", "param2"]`。
-前者将在 shell 终端中运行命令，即 /bin/sh -c；后者则使用 exec 执行。
-指定使用其它终端可以通过第二种方式实现，例如 RUN ["/bin/bash", "-c", "echo hello"]。
+前者将在 shell 终端中运行命令，即 `/bin/sh -c`；后者则使用 exec 执行。
+指定使用其它终端可以通过第二种方式实现，例如 `RUN ["/bin/bash", "-c", "echo hello"]`。
 每条 RUN 指令将在当前镜像基础上执行指定命令，并提交为新的镜像。当命令较长时可以使用 \ 来换行。
 
 ## 4. EXPOSE
@@ -52,7 +52,7 @@ icon: globe
 - ENTRYPOINT ["executable", "param1", "param2"]
 - ENTRYPOINT command param1 param2（shell中执行）。
 
-配置容器启动后执行的命令，并且不可被 docker run 提供的参数覆盖。
+配置容器启动后执行的命令，并且不可被 `docker run` 提供的参数覆盖。
 每个 Dockerfile 中只能有一个 ENTRYPOINT，当指定多个时，只有最后一个起效。
 
 
@@ -108,7 +108,7 @@ icon: globe
     ONBUILD RUN /usr/local/bin/python-build --dir /app/src
     [...]
 
-如果基于 image-A 创建新的镜像时，新的Dockerfile中使用 FROM image-A指定基础镜像时，会自动执行 ONBUILD 指令内容，等价于在后面添加了两条指令。
+如果基于 image-A 创建新的镜像时，新的Dockerfile中使用 `FROM image-A`指定基础镜像时，会自动执行 ONBUILD 指令内容，等价于在后面添加了两条指令。
 
     FROM image-A
     #Automatically run the following
@@ -125,7 +125,7 @@ run名字是在构建镜像的时候运行的，而CMD是运行容器的时候�
 而cmd一般还会与entrypoint一起使用，作为ENTRYPOINT指令的默认参数
 
 ### 2.CMD和ENTRYPOINT的区别
-区别在于，ENTRYPOINT命令不会被docker run 提供的参数覆盖，而启动容器的时候用户指定了运行命令，则会覆盖掉CMD命令
+区别在于，ENTRYPOINT命令不会被`docker run` 提供的参数覆盖，而启动容器的时候用户指定了运行命令，则会覆盖掉CMD命令
 
 ### 3.ADD和COPY的区别
 区别在于ADD命令包含了类似tar的解压功能，如果是单纯复制文件，Docker推荐使用COPY

@@ -10,11 +10,11 @@ icon: globe
 ---
 
 ## 1. Docker从生产到发布流程
-本地创建Dockerfile文件，并安装测试
-然后递交给运维人员Dockerfile文件
-运维人员使用安装Docker和Docker Compose
-执行Docker-compose up 启动容器
-（环境第一次执行Docker-compose up时会通过原始镜像生成一个生产镜像，生产镜像的名称以文件夹命名）
+本地创建`Dockerfile`文件，并安装测试
+然后递交给运维人员`Dockerfile`文件
+运维人员使用安装`Docker`和`Docker Compose`
+执行`Docker-compose up` 启动容器
+（环境第一次执行`Docker-compose up`时会通过原始镜像生成一个生产镜像，生产镜像的名称以文件夹命名）
 然后运维人员测试
 测试完成后Dockerfile递交给其他开发人员
 
@@ -25,7 +25,7 @@ icon: globe
 
 
 ## 3. 原始镜像用哪个？
-继承官网的服务镜像，如mysql，就FROM mysql:5.6
+继承官网的服务镜像，如mysql，就`FROM mysql:5.6`
 
 
 ## 4. 代码数据存在哪里
