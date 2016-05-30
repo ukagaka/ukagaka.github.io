@@ -20,5 +20,5 @@ $( document ).ready(function() {
     (document.getElementsByTagName('head')[0]
     || document.getElementsByTagName('body')[0]).appendChild(ds);
     windowScroll();
-    pajx_loadDuodsuo();
+    // pajx_loadDuodsuo();
 });
