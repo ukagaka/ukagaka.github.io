@@ -105,16 +105,14 @@ icon: globe
 
 
 ## 6. 在视图中显示URL连接的三种方式
-### 1、直接写id法
 
+### 1、直接写id法
     <a href="/articles/{{ $article->id }}"></a>
     
 ### 2、使用URL函数法
-
     <a href="{{ url('articles', $article->id) }}"></a>
     
 ### 3、使用控制器方法
-
     <a href="{{ action('ArticlesController@show', [$article->id]) }}"></a>
 
 ## 7. module特殊用法
@@ -128,7 +126,6 @@ icon: globe
             $this->attributes['published_at'] = Carbon::createFromFormat('Y-m-d', $date);
         }
     }
-    
 上面这个例子表示在存入数据库之前，对published_at字段进行处理。把接收到的时间字段给处理后，在存入数据库
 前面的set和后面的Attribute为关键字，中间的字段名为驼峰写法
 
@@ -142,7 +139,6 @@ icon: globe
     {
         $query->where('published_at', '<=', Carbon::now());   //表示查询时间小于或等于当前时间的数据
     }
-
 注意scope为关键字，后面方法名为驼峰法，第一个字母大写，需要接收查询语句擦拭，但是不需要再使用的时候传递。
 
 
@@ -161,8 +157,11 @@ icon: globe
 
 ## 9. 自动生成的created_at字段用法
 >自动生成的这个字段不属于普通的时间，而是作为一种Carbon对象来存储的
+
 ### 1、使用$article->created_at，输出的是Carbon对象
+
 ### 2、使用$article->created_at->year，输出的是年份
+
 ### 3、使用$article->created_at->diffForHumans()，输出的是多少时间前发布的
 
 
