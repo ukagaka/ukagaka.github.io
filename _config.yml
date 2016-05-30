@@ -13,7 +13,7 @@ location: Shanghai
 company: website
 company_url: https://www.ukagaka.cn
 github_url: https://github.com/ukagaka
-description: This is personnel website of ukagaka Chuan
+description: Dennis's博客
 favicon: favicon.png # Image must be in assets/images
 
 url: http://ukagaka.github.io # the base hostname & protocol for your site
@@ -43,7 +43,7 @@ kramdown:
   enable_coderay: true
 
 # Disque
-disque: httpdongchuangithubio.disqus.com
+disque: https://www.ukagaka.cn
 
 # Pagination
 paginate: 10
