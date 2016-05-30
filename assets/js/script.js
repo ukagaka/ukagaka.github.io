@@ -162,12 +162,12 @@ function afterPjax() {
     var s = document.getElementsByTagName('script')[0];
     s.parentNode.insertBefore(gcse, s);
   });
-  var ds = document.createElement('script');
-  ds.type = 'text/javascript';ds.async = true;
-  ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-  ds.charset = 'UTF-8';
-  (document.getElementsByTagName('head')[0] 
-     || document.getElementsByTagName('body')[0]).appendChild(ds);
+  // var ds = document.createElement('script');
+  // ds.type = 'text/javascript';ds.async = true;
+  // ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+  // ds.charset = 'UTF-8';
+  // (document.getElementsByTagName('head')[0]
+  //    || document.getElementsByTagName('body')[0]).appendChild(ds);
   pajx_loadDuodsuo();
   pajx_load_fullscreen();
 }afterPjax();
