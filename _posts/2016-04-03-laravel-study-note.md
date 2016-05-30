@@ -116,6 +116,7 @@ icon: globe
     <a href="{{ action('ArticlesController@show', [$article->id]) }}"></a>
 
 ## 7. module特殊用法
+
 ###  1、使用 setFieldNameAttribute 可以在数据存入数据库之前，对数据进行处理，中间的fieldName为要处理的字段名
 例：
 
