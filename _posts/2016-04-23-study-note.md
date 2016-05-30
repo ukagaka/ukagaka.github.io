@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 记一次第三方验证码踩过的坑
-category: [工作记录]
+category: 工作记录
 tags: [工作记录]
 ---
 
