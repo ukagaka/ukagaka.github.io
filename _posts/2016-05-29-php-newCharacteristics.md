@@ -33,11 +33,11 @@ icon: globe
     filter_var 使用特定的过滤器过滤一个变量，还可以用来验证数据，比如邮箱
     filter_input 通过名称获取特定的外部变量，并且可以通过过滤器处理它
 
-### 6.安全
+### 6. 安全
     password_hash  创建密码的哈希
     pasword_verify 验证密码是否和哈希匹配
 
-### 7.时间
+### 7. 时间
     DateTime 管理日期和时间的类
     DateInterval 表示长度固定的时间段（如：“两天前”），或者相对而言的时间段（如“昨天”）
     DateTimeZone 更改时间时区

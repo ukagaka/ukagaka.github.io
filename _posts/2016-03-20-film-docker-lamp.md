@@ -51,7 +51,7 @@ icon: globe
 >首先我们需要创建目录log目录用来存放各个日志文件，以后`log`文件夹下的`nginx`和`php`文件夹。<br>
 >我们共享的目录默认为`/var/www`目录，共享到容器的目录也是`/var/www`目录，如果想更改，请更改各个配置文件<br>
 
-### 1、Nginx的编写
+### 1. Nginx的编写
 
     FROM nginx:1.9.0
     ADD nginx.conf /etc/nginx/nginx.conf
@@ -63,7 +63,7 @@ icon: globe
 一个`nginx.conf`文件用来指定`nginx`日志文件存放的位置。为了数据能永久保存，我们指定日志存到我们的共享目录下，方便后期的查找。<br>
 另外是`sites-enabled`的目录下，我们存放了虚拟目录的配置文件。<br>
 
-### 2、PHP的编写
+### 2. PHP的编写
 
     FROM php:5.6-fpm
     ADD sources.list /etc/apt/sources.list
@@ -98,7 +98,7 @@ icon: globe
   - `php-fpm.conf`是更改了我们的日志文件存放的位置<br>
 并且安装了composer，并且使composer进行了全局配置<br>
 
-### 3、msyql编写
+### 3. msyql编写
 
     FROM mysql:5.6
     RUN usermod -u 1000 mysql && chown mysql.mysql /var/run/mysqld/
@@ -107,7 +107,7 @@ icon: globe
 
 mysql编写的时候只要注意权限进行设置下即可。<br>
 
-### 4、docker-compose的编写
+### 4. docker-compose的编写
 使用官方提供的DocerCompose可以使容器很好的连接起来，更容易进行管理<br>
 
     nginx:
