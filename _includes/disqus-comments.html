@@ -1,23 +1,23 @@
-<!-- 多说评论框 start -->
-<div class="comments" data-thread-key={{page.id}} data-title={{page.title}} data-url={{ site.url }}{{page.url}}></div>
-<script type="text/javascript">
-    var duoshuoQuery = {short_name:"{{ site.duoshuo_short_name }}"};
-</script>
-<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-<script type="text/javascript">
-    var duoshuoQuery = {short_name:"dennisblog"};
-</script>
-<!-- 多说公共JS代码 end -->
-<script>
-    function pajx_loadDuodsuo(){
-        var dus=$(".comments");
-        if($(dus).length==1){
-            var el = document.createElement('div');
-            el.setAttribute('data-thread-key',$(dus).attr("data-thread-key"));//必选参数
-            el.setAttribute('data-url',$(dus).attr("data-url"));
-            DUOSHUO.EmbedThread(el);
-            $(dus).html(el);
-        }
-    }
-</script>
-<!-- 多说评论框 end -->
+<!--&lt;!&ndash; 多说评论框 start &ndash;&gt;-->
+<!--<div class="comments" data-thread-key={{page.id}} data-title={{page.title}} data-url={{ site.url }}{{page.url}}></div>-->
+<!--<script type="text/javascript">-->
+    <!--var duoshuoQuery = {short_name:"{{ site.duoshuo_short_name }}"};-->
+<!--</script>-->
+<!--&lt;!&ndash; 多说公共JS代码 start (一个网页只需插入一次) &ndash;&gt;-->
+<!--<script type="text/javascript">-->
+    <!--var duoshuoQuery = {short_name:"dennisblog"};-->
+<!--</script>-->
+<!--&lt;!&ndash; 多说公共JS代码 end &ndash;&gt;-->
+<!--<script>-->
+    <!--function pajx_loadDuodsuo(){-->
+        <!--var dus=$(".comments");-->
+        <!--if($(dus).length==1){-->
+            <!--var el = document.createElement('div');-->
+            <!--el.setAttribute('data-thread-key',$(dus).attr("data-thread-key"));//必选参数-->
+            <!--el.setAttribute('data-url',$(dus).attr("data-url"));-->
+            <!--DUOSHUO.EmbedThread(el);-->
+            <!--$(dus).html(el);-->
+        <!--}-->
+    <!--}-->
+<!--</script>-->
+<!--&lt;!&ndash; 多说评论框 end &ndash;&gt;-->
