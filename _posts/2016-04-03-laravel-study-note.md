@@ -107,12 +107,15 @@ icon: globe
 ## 6. 在视图中显示URL连接的三种方式
 
 ### 1、直接写id法
+
     <a href="/articles/{{ $article->id }}"></a>
     
 ### 2、使用URL函数法
+
     <a href="{{ url('articles', $article->id) }}"></a>
     
 ### 3、使用控制器方法
+
     <a href="{{ action('ArticlesController@show', [$article->id]) }}"></a>
 
 ## 7. module特殊用法
