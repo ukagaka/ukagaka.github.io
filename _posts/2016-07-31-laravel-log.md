@@ -27,7 +27,7 @@ icon: globe
 只需要找到它的视图文件，然后改它的视图文件就好。一般在`resources\views\auth\login.blade.php`文件<br>
 
 ## 3. 请求登陆
-这个使用的是`getLogin`这个方法，这个的话因为表名，字段名，字段，包括验证等，都不符合我们的要求，所以需要重写
+这个使用的是`postLogin`这个方法，这个的话因为表名，字段名，字段，包括验证等，都不符合我们的要求，所以需要重写
 重写的话可以使用两种方法接收传过来的数据：
 一种是使用`request`的方法接收数据，另外一种是使用`Input::get`的方法获取数据。<br>
 Request的话需要引入`use Illuminate\Http\Request`类<br>
@@ -154,3 +154,6 @@ login.blade
 <br>
 <br>
 >如果Auth::attempt认证用户后，然后在其它页面使用`Auth::user()`获取不到用户信息的话，很可能就是`App\User`没有配置正确
+
+
+原文链接：[Dennis`s blog](http://ukagaka.github.io/laravel/2016/07/31/laravel-log.html)
