@@ -27,7 +27,7 @@ icon: globe
     
     public function getReset()
     {
-        return view('auth.register');
+        return view('auth.reset');
     }
 
 ## 3. 请求重置密码

@@ -53,7 +53,7 @@ Input的话需要引入`use Input`类<br>
         public $timestamps = false;         //是否有created_at和updated_at字段
 
         protected $fillable = [     //可以被赋值的字段
-            'truename', 'username', 'password', 'rnd', 'adminclass', 'groupid', 'checked', 'styleid', 'filelevel', 'salt', 'loginnum', 'lasttime', 'lastip'
+            'username','password','groupid','checked','styleid','filelevel','loginnum','lasttime','lastip','truename','email','pretime','preip'
         ];
     
         protected $hidden = [   //在模型数组或 JSON 显示中隐藏某些属性
