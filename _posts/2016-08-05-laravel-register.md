@@ -200,6 +200,7 @@ register.blade
 这里每个页面都要求必须登录的话，可定是注册一个全局的，在`$middleware`数组属性里加入一条<br>
 
     \App\Http\Middleware\CheckLoginMiddleware::class
+
 注册下，就可以使用了<br>
 >PS:请记住，如果定义全局的要格外小心，比如上面我们要排除登录页，不然因为用户没有登录，所以在哪个页面都会重定向到登录页，当然也包括登陆页
 
@@ -225,11 +226,13 @@ register.blade
             return $next($request);
         }
     }
+
 这里我们还是通过`Auth::user()`来获取到用户的信息，然后判断用户的组，不属于超级管理员就跳到首页。<br>
 然后我们在到`app/Http/`目录下有个`Kernel.php`文件是注册这个中间件的，这次我们注册为可以选择的中间件。<br>
 这个中间件因为是可以选择的，所以我们还需要给它起个别名,在`$routeMiddleware`数组属性里加如一条<br>
 
-    'user.group' => \App\Http\Middleware\CheckGroupMiddleware::class,
+    'user.group' => \App\Http\Middleware\CheckGroupMiddleware::class
+
 创建一个可以使用`usergroup`这个名字使用的中间件。<br>
 创建好后，我们可以选择在哪里使用，一个是在`router.php`的路由文件里加入，一个是在controller里使用<br>
 在`router.php`文件里使用
@@ -246,6 +249,7 @@ register.blade
     
     Route::get('register', 'UserController@getRegister')->middleware('user.group');
     Route::post('register', 'UserController@postRegister')->middleware('user.group');
+
 我们目前只有两个路由要判断权限，所以使用了链式的写法，当然你也可以按照手册里上使用组的方式，组的方式更为优雅。
 
 >当然如果你的整个控制器内的方法都需要中间件进行验证过滤的话，你也可以创建组的形式，也可以直接在控制器内使用`__construct`方法,让每次请求这个控制器时，先执行中间件
