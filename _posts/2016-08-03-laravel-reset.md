@@ -53,6 +53,7 @@ Input的话需要引入`use Input`类<br>
         'confirmed' => '新密码和确认密码不匹配'
     ];
     $validator = Validator::make($data, $rules, $messages);
+
 `$data` 接收到从from传过来的数据信息<br>
 `rules` 对接收到的值进行判断，其中数组前面的`oldpassword`和`password`是从前端from接收到的原始密码和新密码的name字段数据进行验证<br>
        验证规则的话在手册的验证章节都有，值得注意的是，使用confirmed的话是为了新密码和确认密码进行相同判断，确认密码必须的name值必须是<br>
