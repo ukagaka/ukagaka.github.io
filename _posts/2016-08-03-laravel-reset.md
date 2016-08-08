@@ -89,7 +89,7 @@ Input的话需要引入`use Input`类<br>
     @if(count($errors) > 0)
         <div class="alert alert-danger display-hide" style="display: block;">
             <button class="close" data-close="alert"></button>
-            <span> {{ $errors->first() }}  </span>
+            <span> {{$errors->first()}}  </span>
         </div>
     @endif
 
@@ -99,7 +99,7 @@ Input的话需要引入`use Input`类<br>
     @if( $errors->has('oldpassword') )
         <div class="alert alert-danger display-hide" style="display: block;">
             <button class="close" data-close="alert"></button>
-            <span> {{ $errors->first('oldpassword') }}  </span>
+            <span> {{$errors->first('oldpassword')}}  </span>
         </div>
     @endif
 
@@ -151,7 +151,7 @@ reset.blade
             @if($errors->first())
                 <div class="alert alert-danger display-hide" style="display: block;">
                     <button class="close" data-close="alert"></button>
-                    <span> {{ $errors->first() }}  </span>
+                    <span> {{$errors->first()}}  </span>
                 </div>
             @endif
             {!! csrf_field() !!}

@@ -60,6 +60,7 @@ Input的话需要引入`use Input`类<br>
             'password', 'remember_token',
         ];
     }
+
 根据自己的需求更改为和自己一样的数据表名称
 
 ## 5. 重写方法和认证用户
@@ -69,6 +70,7 @@ Input的话需要引入`use Input`类<br>
 例：
 
     Auth::attempt(['username' => $name, 'password' => $password])
+
 上面，我用户数据表里的用户名和密码字段对应于'username'和'password'字段<br>
 如果有人问，如果我用户名不止一个字段，该怎么办，比如email和phone两个字段都是用户名，都可以登陆，这样该怎么办？<br>
 其实我们可以使用两次进行认证<br>
@@ -79,6 +81,7 @@ Input的话需要引入`use Input`类<br>
     } else if (Auth::attempt(['phone' => $name, 'password' => $password], 1)) {
         return redirect()->intended('/');
     }
+
 其实，完全不推荐这样使用，可以在前面判断好后在决定使用哪种认证
 
 
@@ -91,6 +94,7 @@ Input的话需要引入`use Input`类<br>
 例：
 
     redirect('login')->withInput($request->except('password'))->with('msg', '用户名或密码错误');
+
 `redirect`表示重定向到哪个页面<br>
 `withInput`表示重定向后存储的一次性数据，这里我们把用户输入的数据还返回过去<br>
 `except`方法表示返回除了指定键的所有集合项，这里我们把返回的数据里的密码项给删除<br>
@@ -129,7 +133,7 @@ login.blade
             @if (session('msg'))
                 <div class="alert alert-danger display-hide"  style="display: block;">
                     <button class="close" data-close="alert"></button>
-                    <span>{{ session('msg') }} </span>
+                    <span>{{session('msg')}} </span>
                 </div>
             @else
                 <div class="alert alert-danger display-hide">
@@ -139,7 +143,7 @@ login.blade
             @endif
             <div class="form-group">
                 <label class="control-label visible-ie8 visible-ie9">Username</label>
-                <input class="form-control form-control-solid placeholder-no-fix" type="text" autocomplete="off" placeholder="Username" name="username" value="{{ old('username') }}" /> </div>
+                <input class="form-control form-control-solid placeholder-no-fix" type="text" autocomplete="off" placeholder="Username" name="username" value="{{old('username')}}" /> </div>
             <div class="form-group">
                 <label class="control-label visible-ie8 visible-ie9">Password</label>
                 <input class="form-control form-control-solid placeholder-no-fix" type="password" autocomplete="off" placeholder="Password" name="password" /> </div>
