@@ -25,10 +25,12 @@ icon: globe
 ## 2. 显示注册账号页面
 这个使用的是`getRegister`这个方法，这个方法只需要显示一个视图所以并没有特别的逻辑<br>
     
+``` php
     public function getRegister()
     {
         return view('auth.register');
     }
+```
 
 ## 3. 请求注册账号
 这个使用的是`postRegister`这个方法<br>
@@ -36,6 +38,7 @@ icon: globe
 我们在往数据库里插入一条用户纪录的时候，可以使用`User::create($data)`进行插入。<br>
 `$data`是个数组，里面存放了每个字段的键和值
 
+``` php
     public function postRegister(Request $request)
     {
         $rules = [
@@ -75,10 +78,12 @@ icon: globe
         //如果注册后还想立即登录的话，可以使用$user = User::create($data); Auth::login($user); 进行认证
         return redirect('/');
     }
+```
 
 ## 4. 完成后的示例
 UserController
 
+```
     public function getRegister()
     {
         return view('auth.register');
@@ -122,9 +127,10 @@ UserController
         User::create($data); //插入一条新纪录，并返回保存后的模型实例
         return redirect('/');
     }
-
+```
 register.blade
 
+```
     <form class="login-form" action="{{ url('/register') }}" method="post">
         {!! csrf_field() !!}
         <h3 class="font-green">Sign Up</h3>
@@ -155,6 +161,7 @@ register.blade
             <button type="submit" id="register-submit-btn" class="btn btn-success uppercase pull-right">注册</button>
         </div>
     </form>
+```
 
 ## 5. 中间件--用户必须登录
 现在注册都完成了,我们就差用户的判断了。
@@ -166,7 +173,8 @@ register.blade
 因为我们是后台内容管理系统，所以，我们首先创建一个中间件，功能是，所有页面进入前，必须是登录状态，否则跳到登录页。<br>
 查看手册发现可以使用`php artisan make:middleware CheckLoginMiddleware`命令创建一个中间件，当然复制一个差不多的文件，改下也是一样的。<br>
 然后会在`app/Http/Middleware/`目录下创建了一个`CheckLoginMiddleware`中间件文件，里面只有一个`handle()`方法，我们直接在里面增加我们的功能
-    
+ 
+ ```   
     <?php
     
     namespace App\Http\Middleware;
@@ -190,6 +198,7 @@ register.blade
             return $response;
         }
     }
+```
 
 这个中间件的功能是，如果有路由产生，首先使用`Auth::check()`判断用户是否登录，如果没有登录的跳转到登录页。<br>
 方法写好了，但是还不能使用，我们需要注册下这个中间件，告诉框架我们这个中间件写好了，可以使用了，使用的范围是哪里。<br>
@@ -207,7 +216,8 @@ register.blade
 ## 5. 中间件--特殊页面需要验证用户组
 现在是进行用户权限页面的限制，同样我们也要重新创建一个中间件<br>
 使用`php artisan make:middleware CheckGroupMiddleware`创建一个新的中间件，用来判断这个用户是否满足这个权限<br>
-    
+
+```    
     <?php
     
     namespace App\Http\Middleware;
@@ -226,34 +236,44 @@ register.blade
             return $next($request);
         }
     }
+```
 
 这里我们还是通过`Auth::user()`来获取到用户的信息，然后判断用户的组，不属于超级管理员就跳到首页。<br>
 然后我们在到`app/Http/`目录下有个`Kernel.php`文件是注册这个中间件的，这次我们注册为可以选择的中间件。<br>
 这个中间件因为是可以选择的，所以我们还需要给它起个别名,在`$routeMiddleware`数组属性里加如一条<br>
 
+```
     'user.group' => \App\Http\Middleware\CheckGroupMiddleware::class
+```
 
 创建一个可以使用`usergroup`这个名字使用的中间件。<br>
 创建好后，我们可以选择在哪里使用，一个是在`router.php`的路由文件里加入，一个是在controller里使用<br>
 在`router.php`文件里使用
 
+```
     Route::get('/', ['middleware' => ['user.group'], function () {
         //
     }]);
-    
+```
+
 在控制器内使用
 
+```
     $this->middleware('user.group');
+```
 
 这里我们选择在路由里添加中间件。让注册页面只能是超级管理员才可以注册
-    
+
+```
     Route::get('register', 'UserController@getRegister')->middleware('user.group');
     Route::post('register', 'UserController@postRegister')->middleware('user.group');
+```
 
 我们目前只有两个路由要判断权限，所以使用了链式的写法，当然你也可以按照手册里上使用组的方式，组的方式更为优雅。
 
 >当然如果你的整个控制器内的方法都需要中间件进行验证过滤的话，你也可以创建组的形式，也可以直接在控制器内使用`__construct`方法,让每次请求这个控制器时，先执行中间件
-    
+  
+```
     class MyController extends Controller
     {
         public function __construct()
@@ -266,5 +286,6 @@ register.blade
             return view('my.index');
         }
     }
+```
 
 原文链接：[Dennis`s blog](http://ukagaka.github.io/laravel/2016/08/05/laravel-register.html)
