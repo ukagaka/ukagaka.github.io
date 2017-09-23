@@ -67,16 +67,16 @@ icon: globe
 ## 5. 其它问题
 
 虽然上面一步已经满足了我们的需求，但是还是要考虑其它问题？  
-    1、 redis发现锁失败了要怎么办？中断请求还是循环请求？
-    2、 循环请求的话，如果有一个获取了锁，其它的在去获取锁的时候，是不是容易发生抢锁的可能？
-    3、 锁提前过期后，客户端A还没执行完，然后客户端B获取到了锁，这时候客户端A执行完了，会不会在删锁的时候把B的锁给删掉？
+    1、 redis发现锁失败了要怎么办？中断请求还是循环请求？  
+    2、 循环请求的话，如果有一个获取了锁，其它的在去获取锁的时候，是不是容易发生抢锁的可能？  
+    3、 锁提前过期后，客户端A还没执行完，然后客户端B获取到了锁，这时候客户端A执行完了，会不会在删锁的时候把B的锁给删掉？  
 
 
 ## 6. 解决办法
 
-针对问题1：使用循环请求，循环请求去获取锁
-针对问题2：针对第二个问题，在循环请求获取锁的时候，加入睡眠功能，等待几毫秒在执行循环
-针对问题3：在加锁的时候存入的key是随机的。这样的话，每次在删除key的时候判断下存入的key里的value和自己存的是否一样
+针对问题1：使用循环请求，循环请求去获取锁  
+针对问题2：针对第二个问题，在循环请求获取锁的时候，加入睡眠功能，等待几毫秒在执行循环  
+针对问题3：在加锁的时候存入的key是随机的。这样的话，每次在删除key的时候判断下存入的key里的value和自己存的是否一样  
 
 ```
         do {  //针对问题1，使用循环
@@ -124,6 +124,6 @@ icon: globe
 原文链接：[Dennis`s blog](http://ukagaka.github.io/php/2017/09/21/redisLock.html)  
 
 [官方提供分布式redis锁说明](https://redis.io/topics/distlock)  
-[PHPreids分布式锁](https://github.com/ronnylt/redlock-php)
+[PHPreids分布式锁](https://github.com/ronnylt/redlock-php)  
 [谈谈Redis的SETNX](https://huoding.com/2015/09/14/463)  
 [redis五种常见使用场景下PHP实现](https://segmentfault.com/a/1190000008404117?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)
